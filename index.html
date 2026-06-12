@@ -93,36 +93,124 @@
       </div>
     </section>
 
-    <section id="projekty" class="portfolio-section projects-section">
+    <section id="projekty" class="portfolio-section">
       <div class="section-head">
         <h2 class="section-title">Moje <span class="accent">projekty</span></h2>
-        <p class="section-desc">Wybrane realizacje i miniatury.</p>
+        <p class="section-desc">Realizacje graficzne i miniatury promocyjne.</p>
       </div>
+      
       <div class="graphics-panel">
         <div class="custom-projects-grid">
           
-          <div class="project-custom-card">
+          <div class="project-custom-card" tabindex="0">
             <div class="project-custom-thumb">
               <img src="img/miniaturka1.png" alt="Miniaturka projektu 1" loading="lazy" />
             </div>
-            <div class="project-custom-info">
-              <h3>Konfiguracja Survival + Guilds</h3>
-              <p>Pełne wdrożenie silnika Purpur, optymalizacja bazy danych MySQL oraz autorskie skrypty na ekonomię.</p>
+            <div class="project-custom-body">
+              <h3 class="project-custom-title">Miniaturka Promocyjna 1</h3>
+              <p class="project-custom-sub">Projekt Graficzny</p>
+              <p class="project-custom-desc">Koncepcja i realizacja materiałów promocyjnych z zachowaniem unikalnej tożsamości wizualnej i dopasowanej kolorystyki.</p>
             </div>
           </div>
 
-          <div class="project-custom-card">
+          <div class="project-custom-card" tabindex="0">
             <div class="project-custom-thumb">
               <img src="img/miniaturka2.png" alt="Miniaturka projektu 2" loading="lazy" />
             </div>
-            <div class="project-custom-info">
-              <h3>Sieć serwerów Velocity</h3>
-              <p>Zabezpieczenie proxy przed atakami botów, konfiguracja bungeecord oraz synchronizacja danych graczy.</p>
+            <div class="project-custom-body">
+              <h3 class="project-custom-title">Miniaturka Promocyjna 2</h3>
+              <p class="project-custom-sub">Projekt Graficzny</p>
+              <p class="project-custom-desc">Dedykowany układ graficzny stworzony pod kątem social media, maksymalizujący zaangażowanie i przejrzystość kluczowych informacji.</p>
             </div>
           </div>
 
         </div>
       </div>
+
+      <style>
+        .custom-projects-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        @media (min-width: 520px) {
+          .custom-projects-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 900px) {
+          .custom-projects-grid {
+            gap: 1.15rem;
+          }
+        }
+
+        .project-custom-card {
+          border-radius: var(--radius-xl);
+          overflow: hidden;
+          border: 1px solid var(--border);
+          background: var(--bg-elevated);
+          cursor: pointer;
+          transition: border-color var(--transition), transform var(--transition);
+        }
+
+        .project-custom-card:hover {
+          border-color: rgba(255, 45, 106, 0.35);
+          transform: translateY(-2px);
+        }
+
+        .project-custom-card:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 3px;
+        }
+
+        .project-custom-thumb {
+          aspect-ratio: 16 / 9;
+          background: linear-gradient(145deg, #1a1a1f 0%, #0a0a0c 100%);
+          overflow: hidden;
+        }
+
+        .project-custom-thumb img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform var(--transition);
+        }
+
+        .project-custom-card:hover .project-custom-thumb img {
+          transform: scale(1.03);
+        }
+
+        .project-custom-body {
+          padding: 1rem 1.1rem 1.15rem;
+          text-align: left;
+        }
+
+        .project-custom-title {
+          margin: 0 0 0.25rem;
+          font-family: var(--font-display);
+          font-weight: 700;
+          font-size: 1.02rem;
+          letter-spacing: -0.02em;
+          color: var(--text);
+        }
+
+        .project-custom-sub {
+          margin: 0 0 0.45rem;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: rgba(244, 244, 245, 0.48);
+        }
+
+        .project-custom-desc {
+          margin: 0;
+          font-size: 0.84rem;
+          color: var(--text-muted);
+          line-height: 1.45;
+        }
+      </style>
     </section>
   </main>
 
